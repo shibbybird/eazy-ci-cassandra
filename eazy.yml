@@ -1,0 +1,12 @@
+eazyVersion: '1.0'
+image: 'shibbybird/eazy-ci-cassandra'
+releases:
+  - 'latest'
+  - '3.11.4'
+deployment:
+  ports:
+    - 9042
+  health:
+    - '/bin/sh'
+    - '-c'
+    - 'while ! cqlsh host.docker.internal -e "describe cluster"; do sleep 1; done; exit;'
