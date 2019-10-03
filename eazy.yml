@@ -10,4 +10,4 @@ deployment:
   health:
     - '/bin/sh'
     - '-c'
-    - 'while ! cqlsh host.docker.internal -e "describe cluster"; do sleep 1; done; exit;'
+    - 'while ! cqlsh eazy-ci-cassandra -e "describe cluster"; do sleep 1; done; exit;'
